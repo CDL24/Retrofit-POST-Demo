@@ -74,7 +74,7 @@ public class RegistrationActivity extends AppCompatActivity {
             Gson gson = new GsonBuilder()
                     .create();
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://182.75.142.125:901")
+                    .baseUrl("YOUR BASE URL HERE")
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
 

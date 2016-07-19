@@ -41,17 +41,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         holder.textName.setText(item.getName());
         holder.textEmail.setText(item.getEmail());
         holder.textMobile.setText(item.getPhone().getMobile());
-
-        /*Glide
-            .with(mContext)
-            .load(item.getOwner().getProfile_image())
-            .centerCrop()
-            .placeholder(android.R.drawable.ic_dialog_alert)
-            .crossFade()
-            .into(holder.textMobile);
-
-        Log.v("Tags : position :: "+position, ""+item.getTags().size());*/
-
     }
 
     @Override
@@ -73,40 +62,4 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
         }
     }
 
-    /**
-     * Edit record in database
-     * @param position - row position in array list
-     */
-    /*private void editRow(int position) {
-        String rowId = items.get(position).getId();
-        Intent intentEdit = new Intent(mContext, MainActivity.class);
-        intentEdit.putExtra("ROW_ID", rowId);
-        mContext.startActivity(intentEdit);
-        ((Activity)mContext).finish();
-    }*/
-
-    //Remove item
-   /* public void removeItem(int position) {
-        DatabaseHandler dbHandler = DatabaseHandler.getInstance(mContext);
-        try {
-            String rowId = items.get(position).getId();
-
-            String whereClause = DatabaseHandler.KEY_ID+" = ?";
-            String[] whereArgs = new String[]{rowId};
-            int result = dbHandler.deleteRecord(DatabaseHandler.TABLE_CONTACTS, whereClause, whereArgs);
-
-            if(result > 0){
-                notifyItemRemoved(position);
-                notifyItemRangeChanged(position, items.size());
-                items.remove(position);
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            if(null != dbHandler){
-                dbHandler.close();
-            }
-        }
-
-    }*/
 }

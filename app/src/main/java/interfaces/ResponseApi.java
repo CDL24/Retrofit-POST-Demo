@@ -17,14 +17,11 @@ import retrofit2.http.POST;
  */
 public interface ResponseApi {
 
-    //Actual URL GET :: http://api.androidhive.info/contacts/
-    //Actual URL POST :: http://182.75.142.125:901/luckylips/web-new/webservice/testlogin
-
     @GET("/contacts")
     Call<ResponseData> getResponse();
 
     @FormUrlEncoded
-    @POST("/luckylips/web-new/webservice/testlogin")
+    @POST("/webservice/testlogin")
     Call<RegistrationResponse> sendData(@Field("name") String name,
                                         @Field("email") String email);
 }

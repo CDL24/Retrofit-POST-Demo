@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
     ProgressBar mProgressBar;
-    public static final String ROOT_URL = "http://api.androidhive.info";
+    public static final String ROOT_URL = "YOUR BASE URL HERE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,11 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "onResponse :: "+response.code(), Toast.LENGTH_SHORT).show();
 
                 ResponseData responseData = response.body();
-                Log.v("responseData :: ", responseData.toString());
+
                 List<Contact> list = responseData.getContacts();
                 if (null != list && list.size() > 0) {
 
-                    Log.v("result Size : ", ""+list.size());
                     MyRecyclerAdapter myRecyclerAdapter = new MyRecyclerAdapter(MainActivity.this, list);
                     mRecyclerView.setHasFixedSize(true);
                     mRecyclerView.setAdapter(myRecyclerAdapter);
